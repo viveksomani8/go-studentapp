@@ -23,6 +23,7 @@ const (
 	mongo_db_string = "mongodb+srv://mongo642:Altrancg123@cluster0.3ptkea0.mongodb.net/test?retryWrites=true&w=majority"
 	//cosmos_db_string = "mongodb://go-cosmos-db:rtebVmg3rVIF7vKsGAWuhSMrI535idmfh0T148oIlNWakgAWpGVnbCyryNVlYy4FprtpbJC2vX1oACDbJe5SDQ==@go-cosmos-db.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@go-cosmos-db@"
 	cosmos_db_string = "mongodb://student-db:KhcvBcMgla30eeuL8MqstUwk9gLWaccsQzDZ0MpyA4XImntSKsRuNznE2ub7dwq0xn5OV1u5U7HiACDbMWjmpg==@student-db.mongo.cosmos.azure.com:10255/?ssl=true&retrywrites=false&replicaSet=globaldb&maxIdleTimeMS=120000&appName=@student-db@"
+	webport          = ":80"
 )
 
 type Student struct {
@@ -221,6 +222,6 @@ func main() {
 	router.HandleFunc("/student/{id}", GetStudentEndpoint).Methods("GET", "OPTIONS")
 	// To delete the student record
 	router.HandleFunc("/student/delete/{id}", DeleteStudentEndpoint).Methods("DELETE", "OPTIONS")
-	http.ListenAndServe(":12345", router)
-
+	fmt.Println("Listening for connections at port", webport)
+	http.ListenAndServe(webport, router)
 }
