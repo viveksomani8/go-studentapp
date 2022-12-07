@@ -2,7 +2,7 @@
 
  services:
   
-  student-attendance-service:
+  studentapp:
     build:
       context: ./
       dockerfile: ./studentapp.dockerfile
