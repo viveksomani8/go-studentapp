@@ -1,0 +1,14 @@
+ version: '3'
+
+ services:
+  
+  student-attendance-service:
+    build:
+      context: ./
+      dockerfile: ./studentapp.dockerfile
+    restart: always
+    ports: 
+      - "80:12345"
+    deploy:
+      mode: replicated
+      replicas: 1
