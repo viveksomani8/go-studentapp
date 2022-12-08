@@ -8,7 +8,7 @@
       dockerfile: ./studentapp.dockerfile
     restart: always
     ports: 
-      - "80:12345"
+      - "80:80"
     deploy:
       mode: replicated
       replicas: 1

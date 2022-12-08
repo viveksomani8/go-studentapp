@@ -205,9 +205,9 @@ func openLogFile() *os.File {
 func main() {
 	fmt.Println("Starting the application...")
 
-	logFile := openLogFile()
-	defer logFile.Close()
-	log.SetOutput(logFile)
+	//logFile := openLogFile()
+	//defer logFile.Close()
+	//log.SetOutput(logFile)
 
 	clientOptions = options.Client().ApplyURI(cosmos_db_string)
 	// fmt.Println("Clinet ", client)
